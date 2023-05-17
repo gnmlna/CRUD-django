@@ -9,17 +9,14 @@
 
     <style>
       .container1{
-        margin-top: 80px;
+        margin-top: 40px;
       }
 
         body{
             background-color: azure;
         }
 
-        #bootstrapdatatable{
-            color: blueviolet;
-        }
-
+      
         #neubar {
       background: #fae8d2;
       box-shadow: 4px 6px 12px rgba(0,0,0,0.4)
@@ -49,7 +46,6 @@
     a.navbar-brand {
       color: #454545
     }
-
     </style>
 </head>
 <body> 
@@ -57,19 +53,21 @@
     
     <div class="container1">
         <div class="col-md-12">
-            <span><a href="/add" class="btn btn-primary" style="margin-left: 90%;">User Interface</a></span>  
+            <span><a href="home.html" class="btn btn-primary" style="margin-left: 90%;">User Interface</a></span>  
             <br>
-            <br>
-            <br>
-            <br>
+          
+            <p align="center">
+              {% load static %} <img src="{% static "myapp/media/records_bg.jpg" %}" />
+
+            </p>
             <div class="table-responsive">
                 <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
-                    <h3 align="center">Appointment Records and Schedule</h3>
+                    
                     <thead>
                         <th><input type="checkbox" id="checkall" /></th>
                         
                         <th>ID</th>
-                       
+                        <th>Photo</th>
                         <th>Beneficiary Name</th>
                         <th>Address</th>
                         <th>Income</th>
@@ -87,7 +85,7 @@
                         <tr>  
                         <td><input type="checkbox" class="checkthis" /></td>
                         <td>{{ applicant.id }}</td>  
-                       
+                        <td>{{ applicant.image }}</td>  
                         <td>{{ applicant.name }}</td>  
                         <td>{{ applicant.address }}</td>
                         <td>{{ applicant.income }}</td> 

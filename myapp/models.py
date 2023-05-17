@@ -33,6 +33,7 @@ class Applicant(models.Model):
     gender = models.CharField(max_length=5, choices=GENDER_CHOICES)
     appdate = models.CharField(max_length=20)
     apptime = models.CharField(max_length=20, choices=TIME_CHOICES)
+    image = models.ImageField(upload_to='applicant_pics/covers', null=True, blank=True)
     status = models.CharField(max_length=250, null=True, blank=True)
 
     def __str__(self):
