@@ -5,12 +5,16 @@ class ApplicantForm(forms.ModelForm):
     
     class Meta:
         model = Applicant
-        fields = ['name', 'address', 'income', 'gender', 'appdate', 'apptime','status']
+        fields = ['name', 'address','job', 'income', 'childNumber','civilStatus', 'gender', 'appdate', 'apptime','status']
         widgets = {
 
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'job': forms.TextInput(attrs={'class': 'form-control'}),
             'income': forms.TextInput(attrs={'class': 'form-control'}),
+            'childNumber': forms.TextInput(attrs={'class': 'form-control'}),
+            'civilStatus': forms.Select(attrs={'class': 'form-check'},
+                                        choices=Applicant.CIVIL_STATUS),
             'gender': forms.Select(attrs={'class': 'form-check'},
                                     choices=Applicant.GENDER_CHOICES),
             'appdate': forms.TextInput(attrs={'class': 'form-control'}),
