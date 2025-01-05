@@ -1,2 +1,1 @@
-# DjangoProjectCRUD
-Web Systems Technologies 2
+CRUD Using Django
